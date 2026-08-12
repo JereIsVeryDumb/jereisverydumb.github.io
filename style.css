@@ -4,8 +4,9 @@
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f8f9fa;
-    color: #333;
+    background: linear-gradient(135deg, #fbfbfa 0%, #f4f5f8 50%, #eaeef4 100%);
+    background-attachment: fixed;
+    color: #2c3036;
 }
 
 header {
@@ -14,11 +15,13 @@ header {
 }
 
 .project-card {
-    background: #ffffff;
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    border: 2px solid rgba(255, 182, 193, 0.6);
+    border-radius: 12px;
     padding: 24px;
     margin-bottom: 40px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 32px rgba(255, 105, 180, 0.08), 0 2px 6px rgba(255, 255, 255, 0.8) inset;
 }
 
 .video-container {
@@ -56,4 +59,48 @@ header {
         flex: 1 1 auto;
         border-radius: 6px;
         display: block;
+        border: 1.5px solid rgba(255, 182, 193, 0.4);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
+
+.project-nav {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border: 2px solid rgba(255, 182, 193, 0.5);
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(255, 105, 180, 0.1);
+    z-index: 1000;
+}
+
+    .project-nav a {
+        text-decoration: none;
+        color: #4a515a;
+        font-size: 0.9rem;
+        font-weight: 600;
+        padding: 8px 12px;
+        border-radius: 6px;
+        transition: all 0.2s ease;
+    }
+
+        .project-nav a:hover {
+            background-color: #fff0f5;
+            color: #d81b60;
+        }
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 1200px) {
+    .project-nav {
+        display: none;
+    }
+}
