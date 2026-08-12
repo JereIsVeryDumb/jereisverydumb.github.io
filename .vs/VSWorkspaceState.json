@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\.github"
+    "\\.github",
+    "\\assets",
+    "\\assets\\images"
   ],
+  "SelectedNode": "\\style.css",
   "PreviewInSolutionExplorer": false
 }
