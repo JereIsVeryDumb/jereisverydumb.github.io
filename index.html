@@ -13,6 +13,8 @@
         <a href="#speedsters">Jere's Speedsters</a>
         <a href="#blender">Blender Basics</a>
         <a href="#unity">Unity Third Person Roguelite</a>
+        <a href="#vr">Godot VR Prototyping</a>
+        <a href="#unreal">Unreal Engine RPG</a>
     </nav>
 
 
@@ -31,6 +33,11 @@
             <div class="image-grid">
                 <img src="assets/images/jeres_speedsters_main.png" alt="Jere's Speedsters main screenshot">
             </div>
+            <p>I was inspired by the game "Micromachines" for the NES, but I made a time trial focused game where Micromachines is a versus one. Graphically the game is quite simple and doesn't have a lot of detail, but where the game in my opinion shines is the game feel. I myself find the arcadey physics fun and not too complicated for a game of this size.</p>
+            <p> One of the main issues still in the game are the tracks since they are so simple and they don't offer a lot of replayablity other than chasing high scores. Also the second level is messed up due to layering issues.</p>
+            
+
+            <p>This ended up being the project I am proudest of from this course since it is a fully playable game with systems that I had never done before like local multiplayer. I enjoyed making this game quite a lot and had fun seeing people post their highscores in our class group chat. The game also saves the highscores even in the web build I am pretty sure, which to me seems cool. The goal was just to make a working game and I'd say I did that here.</p>
         </article>
 
         <article class="project-card" id="blender">
@@ -63,7 +70,7 @@
 
         <article class="project-card" id="unity">
             <h2>Unity Third Person Roguelite Prototype</h2>
-            <p>I have always wanted to make a roguelite / roguelike and now I have some systems I can just copy paste in the future. I made systems such as: Player movement, player health management, player stat management, player level management, 2 different attack types both melee and ranged, an enemy that uses the Unity navmesh component which I had never used before, I made the enemy spawner work so it only spawns a certain amount of enemies and only on the nav mesh so they wont spawn out of the map, I made the enemies drop XP and the player uses the said XP to gain a random stat boost on level up. These are pretty normal fundamental systems for a roguelite / roguelike game and I will definetly be using these in a larger project either in my free time or for a school project. The "game" is visually quite lackluster but that is mainly because I wanted to focus on just the mechanics of the game. In the game the player can roll, throw shells, melee and block. For some reason the third person camera was a bit iffy to setup but in the end it works decent enough.</p>
+            <p>I have always wanted to make a roguelite / roguelike and now I have some systems I can just copy paste in the future. I made systems such as: Player movement, player health management, player stat management, player level management, 2 different attack types both melee and ranged, an enemy that uses the Unity navmesh component which I had never used before, I made the enemy spawner work so it only spawns a certain amount of enemies and only on the nav mesh so they wont spawn out of the map, I made the enemies drop XP and the player uses the said XP to gain a random stat boost on level up<p />.
             <div class="video-container"
                  <iframe
                          src="https://www.youtube-nocookie.com/embed/amRE9_XQMhg"
@@ -75,6 +82,59 @@
             </div>
 
             <p><a href="https://youtu.be/amRE9_XQMhg" target="_blank">Watch on Youtube if the player doesn't work</a></p>
+            <p>These are pretty normal fundamental systems for a roguelite / roguelike game and I will definetly be using these in a larger project either in my free time or for a school project. The "game" is visually quite lackluster but that is mainly because I wanted to focus on just the mechanics of the game. In the game the player can roll, throw shells, melee and block. For some reason the third person camera was a bit iffy to setup but in the end it works decent enough.</p>
+            <p> The prototype does not have any end goal and if the player dies it just destroys the player gameobject.</p>
+            
+        </article>
+
+        <article class="project-card" id="vr">
+            <h2>Godot VR Prototyping</h2>
+            <p> I made a few interactable objects and a vr player controller in Godot using the Godot XR plugin. The hardware I used were the Meta Quest 2 headset and the link cable.</p>
+            <div class="image-grid">
+                <img src="assets/images/"
+            </div>
+            <p> This was by far my worst project since I did not get almost anything to work and learnt basically nothing about making VR objects since they didn't work as expected.</p>
+            <p> There was a really limited amount of help on the internet for doing VR development with Godot. I should've probably picked Unity instead.</p>
+        </article>
+        
+        <article class="project-card" id="unreal">
+            <h2>Unreal Engine RPG based of the Moore's RPG template</h2>
+            <p>I made a small bite sized game prototype using Moore's RPG template on Unreal Engine 5.8, where you are tasked to gain back Toni's milk and Toni's fancy stone. Below is a walkthrough of the first quest of the game:</p>
+            <div class="image-grid">
+                <img src="assets/images/unreal1.png" alt="Unreal Engine RPG Prototype">
+                <p>Firstly you wake up in a forest, with nothing on except your fists. But you can steal someone's sword of the ground if you just walk down the path you see.</p>
+                <img src="assets/images/unreal2.png">
+                <p>You meet this strange Toni fellow who seems upset.</p>
+                <img src="assets/images/unreal3.png">
+                <p> You proceed to ask him if he is fine.</p>
+                <img src="assets/images/unreal4.png">
+                <p> He seems a bit lost.</p>
+                <img src="assets/images/unreal5.png">
+                <p> You find out someone stole his milk!!</p>
+                <img src="assets/images/unreal6.png" />
+                <p> You go beat up the guy who stole his milk!</p>
+                <img src="assets/images/unreal7.png" />
+                <p> That's what you get for stealing Toni's milk!</p>
+                <img src="assets/images/unreal8.png" />
+                <p> You take back Toni's milk</p>
+                <img src="assets/images/unreal9.png" />
+                <p> You have made Toni's day!! As a reward you get 100 coins and 100 xp!</p>
+                </div>
+            <p>That's how the first quest of the game goes. The quest was made using datatables that were already included in the template. Below are the datatables needed to make a new quest:</p>
+            <div class="image-grid">
+                <img src="assets/images/unreal10.png" />
+                <p>Quest datatable</p>
+                <img src="assets/images/unreal11.png" />
+                <p>Quest npcs dialogue responses</p>
+                <img src="assets/images/unreal12.png" />
+                <p>Quest player response dialogue</p>
+
+
+
+            </div>
+            <p>By just adding my own dialogues into the datatable I could easily make more quests that follow the same structure.</p>
+            <p>Other than adding quests to the game I also fixed the sky being really buggy in the template possibly due to it being meant for an older version of Unreal Engine.</p>
+            <p> I enjoyed using the preamde assets but they did also require me to read alot of the documentation just to utilize them since they were quite complex. They needed to be adjusted quite a lot and there were moments where I had 5 different event graphs open just so I could make my own custom NPC. The Toni NPC you see is actually not just a copy pasted one from the template but instead it a child of a "master" class the template has that you can then either code your own systems into or use the systems provided. I went with the provided systems since they linked better to the datatables.</p>
         </article>
 
     </main>
