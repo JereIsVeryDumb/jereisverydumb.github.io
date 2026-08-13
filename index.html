@@ -5,10 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rapid Development Portfolio - Jere Storlöpare</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .zoomable-img {
+            cursor: pointer;
+            transition: transform 0.2s ease, filter 0.2s ease;
+        }
+
+            .zoomable-img:hover {
+                transform: scale(1.02);
+                filter: brightness(1.05);
+            }
+
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+            .lightbox-modal img {
+                max-width: 90%;
+                max-height: 90vh;
+                border-radius: 8px;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+                object-fit: contain;
+            }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #ffffff;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
-    
     <nav class="project-nav">
         <a href="#speedsters">Jere's Speedsters</a>
         <a href="#blender">Blender Basics</a>
@@ -16,7 +59,6 @@
         <a href="#vr">Godot VR Prototyping</a>
         <a href="#unreal">Unreal Engine RPG</a>
     </nav>
-
 
     <header>
         <h1>Rapid Development Portfolio Showcase 2026</h1>
@@ -34,9 +76,7 @@
                 <img src="assets/images/jeres_speedsters_main.png" alt="Jere's Speedsters main screenshot">
             </div>
             <p>I was inspired by the game "Micromachines" for the NES, but I made a time trial focused game where Micromachines is a versus one. Graphically the game is quite simple and doesn't have a lot of detail, but where the game in my opinion shines is the game feel. I myself find the arcadey physics fun and not too complicated for a game of this size.</p>
-            <p> One of the main issues still in the game are the tracks since they are so simple and they don't offer a lot of replayablity other than chasing high scores. Also the second level is messed up due to layering issues.</p>
-            
-
+            <p>One of the main issues still in the game are the tracks since they are so simple and they don't offer a lot of replayablity other than chasing high scores. Also the second level is messed up due to layering issues.</p>
             <p>This ended up being the project I am proudest of from this course since it is a fully playable game with systems that I had never done before like local multiplayer. I enjoyed making this game quite a lot and had fun seeing people post their highscores in our class group chat. The game also saves the highscores even in the web build I am pretty sure, which to me seems cool. The goal was just to make a working game and I'd say I did that here.</p>
         </article>
 
@@ -46,98 +86,187 @@
             <p>Firstly I made the classic donut and mug model that most people do first. I followed a playlist of tutorials by Blender Guru. I only followed the series until the fifth part.</p>
             <p><a href="https://www.youtube.com/playlist?list=PLjEaoINr3zgGUwGwXlj9kBe7TrVWNjkyv" target="_blank">Link to the Blender tutorial playlist that I used by Blender Guru</a></p>
 
-            <p>Then I made a bunch more random models that just popped into my head.</p>
+            <p>Then I made a bunch more random models that just popped into my head:</p>
 
-            <div class="image-grid">
-                <img src="assets/images/donut.png" alt="Blender donut model">
-                <img src="assets/images/goblin.png" alt="Blender goblin model">
-                <img src="assets/images/grave.png" alt="Blender gravestone model">
-                <img src="assets/images/citroen.png" alt="Blender citroen model">
-                <img src="assets/images/controller.png" alt="Blender controller model">
-                <img src="assets/images/glasses.png" alt="Blender glasses model">
-                <img src="assets/images/mouse.png" alt="Blender mouse model">
-                <img src="assets/images/ore.png" alt="Blender ore model">
-                <img src="assets/images/Otamatone.png" alt="Blender Otamatone model">
-                <img src="assets/images/pencil.png" alt="Blender pencil model">
-                <img src="assets/images/redbull.png" alt="Blender redbull model">
-                <img src="assets/images/rock.png" alt="Blender rock model" />
-                <img src="assets/images/XPpickup.png" alt="Blender XP pickup model">
+            <ol class="model-index-list">
+                <li><a href="#model-1">Donut and coffee mug from the tutorial</a></li>
+                <li><a href="#model-2">A funny little Goblin I made</a></li>
+                <li><a href="#model-3">A simple tombstone</a></li>
+                <li><a href="#model-4">A logo inspired by Citroën</a></li>
+                <li><a href="#model-5">A controller</a></li>
+                <li><a href="#model-6">A pair of glasses based on my real glasses</a></li>
+                <li><a href="#model-7">A Lenovo mouse like the ones we have at school</a></li>
+                <li><a href="#model-8">An emerald ore inspired by Minecraft</a></li>
+                <li><a href="#model-9">An otamatone</a></li>
+                <li><a href="#model-10">A pencil</a></li>
+                <li><a href="#model-11">An energy drink baring no resemblance to a real product</a></li>
+                <li><a href="#model-12">A rock</a></li>
+                <li><a href="#model-13">An XP pickup</a></li>
+            </ol>
+
+            <div class="model-gallery">
+                <figure class="gallery-card" id="model-1">
+                    <img src="assets/images/donut.png" alt="Blender donut model" class="zoomable-img">
+                    <figcaption>1. Donut and Coffee Mug</figcaption>
+                </figure>
+
+                <figure class="gallery-card" id="model-2">
+                    <img src="assets/images/goblin.png" alt="Blender goblin model" class="zoomable-img">
+                    <figcaption>2. Goblin Model</figcaption>
+                </figure>
+
+                <figure class="gallery-card" id="model-3">
+                    <img src="assets/images/grave.png" alt="Blender gravestone model" class="zoomable-img">
+                    <figcaption>3. Tombstone</figcaption>
+                </figure>
+
+                <figure class="gallery-card" id="model-4">
+                    <img src="assets/images/citroen.png" alt="Blender citroen model" class="zoomable-img">
+                    <figcaption>4. Citroën Logo</figcaption>
+                </figure>
+
+                <figure class="gallery-card" id="model-5">
+                    <img src="assets/images/controller.png" alt="Blender controller model" class="zoomable-img">
+                    <figcaption>5. Controller</figcaption>
+                </figure>
+
+                <figure class="gallery-card" id="model-6">
+                    <img src="assets/images/glasses.png" alt="Blender glasses model" class="zoomable-img">
+                    <figcaption>6. Glasses</figcaption>
+                </figure>
+
+                <figure class="gallery-card" id="model-7">
+                    <img src="assets/images/mouse.png" alt="Blender mouse model" class="zoomable-img">
+                    <figcaption>7. Lenovo Mouse</figcaption>
+                </figure>
+
+                <figure class="gallery-card" id="model-8">
+                    <img src="assets/images/ore.png" alt="Blender ore model" class="zoomable-img">
+                    <figcaption>8. Emerald Ore</figcaption>
+                </figure>
+
+                <figure class="gallery-card" id="model-9">
+                    <img src="assets/images/Otamatone.png" alt="Blender Otamatone model" class="zoomable-img">
+                    <figcaption>9. Otamatone</figcaption>
+                </figure>
+
+                <figure class="gallery-card" id="model-10">
+                    <img src="assets/images/pencil.png" alt="Blender pencil model" class="zoomable-img">
+                    <figcaption>10. Pencil</figcaption>
+                </figure>
+
+                <figure class="gallery-card" id="model-11">
+                    <img src="assets/images/redbull.png" alt="Blender redbull model" class="zoomable-img">
+                    <figcaption>11. Energy Drink</figcaption>
+                </figure>
+
+                <figure class="gallery-card" id="model-12">
+                    <img src="assets/images/rock.png" alt="Blender rock model" class="zoomable-img">
+                    <figcaption>12. Rock</figcaption>
+                </figure>
+
+                <figure class="gallery-card" id="model-13">
+                    <img src="assets/images/XPpickup.png" alt="Blender XP pickup model" class="zoomable-img">
+                    <figcaption>13. XP Pickup</figcaption>
+                </figure>
             </div>
 
-            <p> I am pretty happy with the results and I learned a lot about Blender and it's hotkeys and such. The main goal for the project was just to learn new things and to have fun while learning. Thats why I made so many random models that just popped up into my head and I also modeled things I saw in my room. I didn't get to use UV unwrapping that much in this project but I do understand the basics of it now too! Overall this was a nice experience and I will be using Blender in the future. Texturing wise I did use both ways of texturing, both texture painting and putting on a texture on the UV itself. I also did try to make use of shaders.</p>
+            <p>I am pretty happy with the results and I learned a lot about Blender and it's hotkeys and such. The main goal for the project was just to learn new things and to have fun while learning. Thats why I made so many random models that just popped up into my head and I also modeled things I saw in my room. I didn't get to use UV unwrapping that much in this project but I do understand the basics of it now too! Overall this was a nice experience and I will be using Blender in the future. Texturing wise I did use both ways of texturing, both texture painting and putting on a texture on the UV itself. I also did try to make use of shaders.</p>
         </article>
-
 
         <article class="project-card" id="unity">
             <h2>Unity Third Person Roguelite Prototype</h2>
-            <p>I have always wanted to make a roguelite / roguelike and now I have some systems I can just copy paste in the future. I made systems such as: Player movement, player health management, player stat management, player level management, 2 different attack types both melee and ranged, an enemy that uses the Unity navmesh component which I had never used before, I made the enemy spawner work so it only spawns a certain amount of enemies and only on the nav mesh so they wont spawn out of the map, I made the enemies drop XP and the player uses the said XP to gain a random stat boost on level up<p />.
-            <div class="video-container"
-                 <iframe
-                         src="https://www.youtube-nocookie.com/embed/amRE9_XQMhg"
-                         title="Unity Third Person Roguelite Prototype"
-                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                         referrerpolicy="strict-origin-when-cross-origin"
-                         allowfullscreen>
-                 ></iframe>
+            <p>I have always wanted to make a roguelite / roguelike and now I have some systems I can just copy paste in the future. I made systems such as: Player movement, player health management, player stat management, player level management, 2 different attack types both melee and ranged, an enemy that uses the Unity navmesh component which I had never used before, I made the enemy spawner work so it only spawns a certain amount of enemies and only on the nav mesh so they wont spawn out of the map, I made the enemies drop XP and the player uses the said XP to gain a random stat boost on level up.</p>
+
+            <div class="video-container">
+                <iframe src="https://www.youtube-nocookie.com/embed/amRE9_XQMhg"
+                        title="Unity Third Person Roguelite Prototype"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                </iframe>
             </div>
 
             <p><a href="https://youtu.be/amRE9_XQMhg" target="_blank">Watch on Youtube if the player doesn't work</a></p>
             <p>These are pretty normal fundamental systems for a roguelite / roguelike game and I will definetly be using these in a larger project either in my free time or for a school project. The "game" is visually quite lackluster but that is mainly because I wanted to focus on just the mechanics of the game. In the game the player can roll, throw shells, melee and block. For some reason the third person camera was a bit iffy to setup but in the end it works decent enough.</p>
-            <p> The prototype does not have any end goal and if the player dies it just destroys the player gameobject.</p>
-            
+            <p>The prototype does not have any end goal and if the player dies it just destroys the player gameobject.</p>
         </article>
 
         <article class="project-card" id="vr">
             <h2>Godot VR Prototyping</h2>
-            <p> I made a few interactable objects and a vr player controller in Godot using the Godot XR plugin. The hardware I used were the Meta Quest 2 headset and the link cable.</p>
+            <p>I made a few interactable objects and a vr player controller in Godot using the Godot XR plugin. The hardware I used were the Meta Quest 2 headset and the link cable.</p>
             <div class="image-grid">
-                <img src="assets/images/"
+                <img src="assets/images/vr_placeholder.png" alt="Godot VR Prototype">
             </div>
-            <p> This was by far my worst project since I did not get almost anything to work and learnt basically nothing about making VR objects since they didn't work as expected.</p>
-            <p> There was a really limited amount of help on the internet for doing VR development with Godot. I should've probably picked Unity instead.</p>
+            <p>This was by far my worst project since I did not get almost anything to work and learnt basically nothing about making VR objects since they didn't work as expected.</p>
+            <p>There was a really limited amount of help on the internet for doing VR development with Godot. I should've probably picked Unity instead.</p>
         </article>
-        
+
         <article class="project-card" id="unreal">
             <h2>Unreal Engine RPG based of the Moore's RPG template</h2>
             <p>I made a small bite sized game prototype using Moore's RPG template on Unreal Engine 5.8, where you are tasked to gain back Toni's milk and Toni's fancy stone. Below is a walkthrough of the first quest of the game:</p>
+
             <div class="image-grid">
                 <img src="assets/images/unreal1.png" alt="Unreal Engine RPG Prototype">
-                <p>Firstly you wake up in a forest, with nothing on except your fists. But you can steal someone's sword of the ground if you just walk down the path you see.</p>
-                <img src="assets/images/unreal2.png">
+                <p>Firstly you wake up in a forest, with nothing on except your fists. But you can steal someone's sword off the ground if you just walk down the path you see.</p>
+                <img src="assets/images/unreal2.png" alt="Unreal Engine RPG Walkthrough 2">
                 <p>You meet this strange Toni fellow who seems upset.</p>
-                <img src="assets/images/unreal3.png">
-                <p> You proceed to ask him if he is fine.</p>
-                <img src="assets/images/unreal4.png">
-                <p> He seems a bit lost.</p>
-                <img src="assets/images/unreal5.png">
-                <p> You find out someone stole his milk!!</p>
-                <img src="assets/images/unreal6.png" />
-                <p> You go beat up the guy who stole his milk!</p>
-                <img src="assets/images/unreal7.png" />
-                <p> That's what you get for stealing Toni's milk!</p>
-                <img src="assets/images/unreal8.png" />
-                <p> You take back Toni's milk</p>
-                <img src="assets/images/unreal9.png" />
-                <p> You have made Toni's day!! As a reward you get 100 coins and 100 xp!</p>
-                </div>
-            <p>That's how the first quest of the game goes. The quest was made using datatables that were already included in the template. Below are the datatables needed to make a new quest:</p>
-            <div class="image-grid">
-                <img src="assets/images/unreal10.png" />
-                <p>Quest datatable</p>
-                <img src="assets/images/unreal11.png" />
-                <p>Quest npcs dialogue responses</p>
-                <img src="assets/images/unreal12.png" />
-                <p>Quest player response dialogue</p>
-
-
-
+                <img src="assets/images/unreal3.png" alt="Unreal Engine RPG Walkthrough 3">
+                <p>You proceed to ask him if he is fine.</p>
+                <img src="assets/images/unreal4.png" alt="Unreal Engine RPG Walkthrough 4">
+                <p>He seems a bit lost.</p>
+                <img src="assets/images/unreal5.png" alt="Unreal Engine RPG Walkthrough 5">
+                <p>You find out someone stole his milk!!</p>
+                <img src="assets/images/unreal6.png" alt="Unreal Engine RPG Walkthrough 6">
+                <p>You go beat up the guy who stole his milk!</p>
+                <img src="assets/images/unreal7.png" alt="Unreal Engine RPG Walkthrough 7">
+                <p>That's what you get for stealing Toni's milk!</p>
+                <img src="assets/images/unreal8.png" alt="Unreal Engine RPG Walkthrough 8">
+                <p>You take back Toni's milk</p>
+                <img src="assets/images/unreal9.png" alt="Unreal Engine RPG Walkthrough 9">
+                <p>You have made Toni's day!! As a reward you get 100 coins and 100 xp!</p>
             </div>
+
+            <p>That's how the first quest of the game goes. The quest was made using datatables that were already included in the template. Below are the datatables needed to make a new quest:</p>
+
+            <div class="image-grid">
+                <img src="assets/images/unreal10.png" alt="Quest Datatable">
+                <p>Quest datatable</p>
+                <img src="assets/images/unreal11.png" alt="Quest NPC Dialogue Responses">
+                <p>Quest npcs dialogue responses</p>
+                <img src="assets/images/unreal12.png" alt="Quest Player Response Dialogue">
+                <p>Quest player response dialogue</p>
+            </div>
+
             <p>By just adding my own dialogues into the datatable I could easily make more quests that follow the same structure.</p>
             <p>Other than adding quests to the game I also fixed the sky being really buggy in the template possibly due to it being meant for an older version of Unreal Engine.</p>
-            <p> I enjoyed using the preamde assets but they did also require me to read alot of the documentation just to utilize them since they were quite complex. They needed to be adjusted quite a lot and there were moments where I had 5 different event graphs open just so I could make my own custom NPC. The Toni NPC you see is actually not just a copy pasted one from the template but instead it a child of a "master" class the template has that you can then either code your own systems into or use the systems provided. I went with the provided systems since they linked better to the datatables.</p>
+            <p>I enjoyed using the premade assets but they did also require me to read alot of the documentation just to utilize them since they were quite complex. They needed to be adjusted quite a lot and there were moments where I had 5 different event graphs open just so I could make my own custom NPC. The Toni NPC you see is actually not just a copy pasted one from the template but instead it a child of a "master" class the template has that you can then either code your own systems into or use the systems provided. I went with the provided systems since they linked better to the datatables.</p>
         </article>
 
     </main>
+
+    <div id="lightbox" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Expanded View">
+    </div>
+
+    <script>
+        const modal = document.getElementById('lightbox');
+        const modalImg = document.getElementById('lightbox-img');
+        const zoomImages = document.querySelectorAll('.zoomable-img');
+
+        zoomImages.forEach(img => {
+            img.addEventListener('click', () => {
+                modal.style.display = 'flex';
+                modalImg.src = img.src;
+                modalImg.alt = img.alt;
+            });
+        });
+
+        modal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+    </script>
 
 </body>
 </html>
